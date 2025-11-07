@@ -1,0 +1,23 @@
+<button mat-icon-button style="align-self: flex-end;" mat-dialog-close>
+  <mat-icon fontIcon="close"></mat-icon>
+</button>
+
+<mat-dialog-content>
+  <h3>Create new account</h3>
+  <p>
+    <mat-form-field>
+      <mat-label>CustomerID</mat-label>
+      <input matInput type="text" [(ngModel)]="newAccounttoAdd.customerID" placeholder="CustomerID">
+    
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>InitialCredit</mat-label>
+      <input matInput type="number" [(ngModel)]="newAccounttoAdd.initialCredit" placeholder="Amount">
+    </mat-form-field>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions style="margin-bottom: 30px;">
+  <button mat-raised-button (click)="addNewAccount()" style="width: 250px;margin-left: 18px;">SUBMIT</button>
+</mat-dialog-actions>

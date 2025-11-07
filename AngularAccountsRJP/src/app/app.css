@@ -1,0 +1,109 @@
+header {
+  text-align: center;
+  margin: 3rem auto;
+  /*background-color: blueviolet;*/
+}
+
+  header img {
+    width: 15rem;
+    height: 10rem;
+    object-fit: contain;
+    background-color: transparent;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    color: darkslategrey
+  }
+
+/*form{
+    background-color: dodgerblue
+}*/
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #808080;
+  color: white;
+  margin: 0;
+}
+
+
+btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: mediumslateblue;
+  border: 1px solid darkslateblue;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+input {
+  background-color: white;
+  border: 1px solid darkslateblue;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 20%;
+}
+
+.button1 {
+  background-color: darkgray;
+  border: 1px solid darkslateblue;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 20%;
+}
+
+btn-group .button:hover {
+  background-color: dodgerblue;
+}
+
+btn-group .button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid solid darkgray;
+  padding: 8px;
+  text-align: center;
+ 
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: darkgray;
+  color: white;
+}
+
+

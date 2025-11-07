@@ -1,0 +1,40 @@
+<button mat-icon-button style="align-self: flex-end;" mat-dialog-close>
+  <mat-icon fontIcon="close"></mat-icon>
+</button>
+
+<mat-dialog-content>
+  <h3>Please enter customer's ID</h3>
+  <p>
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input matInput type="text" [(ngModel)]="inputCustomer" placeholder="ID" />
+      <!--<mat-icon matSuffix>search</mat-icon>-->
+    </mat-form-field>
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        
+        <th>Name</th>
+        <th>Surname</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of Customerlist; track $index){
+      <tr>
+        
+        <td>{{item.name}}</td>
+        <td>{{item.surname}}</td>
+
+
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</mat-dialog-content>
+<mat-dialog-actions style="margin-bottom: 30px;">
+  <button mat-raised-button (click)="searchCustomer()" color=red style="width: 250px;margin-left: 18px;">SEARCH</button>
+</mat-dialog-actions>

@@ -1,0 +1,122 @@
+
+<header>
+  <img src="BSynchro-Logo-2.png" alt="Company Logo" />
+  <h1>Bsynchro RJP</h1>
+</header>
+
+<div class="btn-group" style="width:100%">
+  <!--<button (click)="openDialog()">Add Account</button>-->
+  <button (click)="openAddTransactionDialog()"> Add Transaction</button>
+  <button (click)="toggleAccountsTableVisibility()">Get Account Information</button>
+
+</div>
+
+
+<div *ngIf="showAccountsTable">
+  <input type="text" [(ngModel)]="accountID" placeholder="AccountID" />
+  <button class="button button1" (click)="getAccount()">Search</button>
+  <h2>Account Details</h2>
+  <table>
+    <thead>
+      <tr>
+
+        <th style="width:50%">Balance</th>
+        <th style="width:50%">DateCreated</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of accountList; track $index){
+      <tr>
+
+        <td>{{item.balance}}</td>
+        <td>{{item.createdAt}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <h2>Customer Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:50%">Name</th>
+        <th style="width:50%">Surname</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>{{customerName}}</td>
+        <td>{{customerSurname}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h2>Transactions</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Amount</th>
+        <th>DateCreated</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of transactionList; track $index){
+      <tr>
+        <td>{{$index+1}}</td>
+        <td>{{item.amount}}</td>
+        <td>{{item.createdAt}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<!--Join both projects into one, adding Customer Angular below----------------------------------------- -->
+
+<div class="btn-group" style="width:100%">
+  <button (click)="openAddCustomerDialog()">Add New Customer</button>
+
+  <button (click)="openSearch()">Search Customer</button>
+
+  <button (click)="toggleCustomerTableVisibility()">Get Customers List</button>
+
+</div>
+
+<button class="button button1" *ngIf="showCustomerTable" (click)="getCustomers()">Refresh</button>
+
+
+<table *ngIf="showCustomerTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Balance</th>
+      <th>DateCreated</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of getJsonValue; track $index){
+    <tr>
+      <td>{{$index+1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.surname}}</td>
+      <td>{{item.balance}}</td>
+      <td>{{item.createdAt}}</td>
+
+    </tr>
+    }
+  </tbody>
+</table>
+
+<footer>
+  <p>
+
+  </p>
+</footer>
+
+
+
+<router-outlet />
